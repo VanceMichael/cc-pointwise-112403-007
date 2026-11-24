@@ -1,30 +1,87 @@
 {
-  "name": "人民币中间价发布版本与企业报价窗口采集簿",
+  "name": "人民币中间价适用日期与企业报价引用采集",
   "material_nature": "本地合成演练资料",
-  "description": "仅供本地开发和回归，记录不代表真实机构、交易或观测。",
-  "records": {
-    "fixings": [
-      {
-        "date": "2026-11-24",
-        "pair": "USD/CNY",
-        "value": "6.7111",
-        "change_bp": 9,
-        "revision": 1
-      }
-    ],
-    "calendar": [
-      {
-        "date": "2026-11-25",
-        "state": "open"
-      }
-    ],
-    "quotes": [
-      {
-        "company": "importer-a",
-        "business_date": "2026-11-25",
-        "state": "confirmed"
-      }
-    ],
-    "notes": "合成汇率公告、日历和企业测算引用。"
-  }
+  "description": "资料中的机构、项目、交易、合同和回执均为虚构，仅用于本地开发与回归。",
+  "feeds": [
+    {
+      "id": "fixings",
+      "label": "官方中间价发布",
+      "records": [
+        {
+          "date": "2026-11-24",
+          "pair": "USD/CNY",
+          "value": "6.7111",
+          "direction": "CNY per USD",
+          "release": "F-1124-R1"
+        },
+        {
+          "date": "2026-11-26",
+          "pair": "USD/CNY",
+          "value": "6.7050",
+          "direction": "CNY per USD",
+          "release": "F-1126-R1"
+        },
+        {
+          "date": "2026-11-26",
+          "pair": "EUR/CNY",
+          "value": "7.7400",
+          "direction": "CNY per EUR",
+          "release": "F-1126-E1"
+        }
+      ]
+    },
+    {
+      "id": "calendar",
+      "label": "交易日历与变更通知",
+      "records": [
+        {
+          "date": "2026-11-25",
+          "state": "open",
+          "notice": "初始日历"
+        },
+        {
+          "date": "2026-11-25",
+          "state": "closed",
+          "notice": "临时调整-C2",
+          "issued_at": "2026-11-24T18:00+08:00"
+        },
+        {
+          "date": "2026-11-27",
+          "state": "open",
+          "notice": "初始日历"
+        }
+      ]
+    },
+    {
+      "id": "quotes",
+      "label": "合同指示与测算签收",
+      "records": [
+        {
+          "quote": "Q-201",
+          "company": "海桥进出口",
+          "contract_rule": "报关日",
+          "business_date": "2026-11-25",
+          "pair": "USD/CNY",
+          "state": "pending"
+        },
+        {
+          "quote": "Q-202",
+          "company": "远帆贸易",
+          "contract_rule": "签约日",
+          "business_date": "2026-11-24",
+          "pair": "CNY/USD",
+          "state": "signed",
+          "fixing": "F-1124-R1"
+        },
+        {
+          "quote": "Q-203",
+          "company": "海桥进出口",
+          "contract_rule": "未确认",
+          "business_date": "2026-11-26",
+          "pair": "EUR/CNY",
+          "state": "pending"
+        }
+      ]
+    }
+  ]
 }
