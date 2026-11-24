@@ -1,0 +1,30 @@
+{
+  "name": "人民币中间价发布版本与企业报价窗口采集簿",
+  "material_nature": "本地合成演练资料",
+  "description": "仅供本地开发和回归，记录不代表真实机构、交易或观测。",
+  "records": {
+    "fixings": [
+      {
+        "date": "2026-11-24",
+        "pair": "USD/CNY",
+        "value": "6.7111",
+        "change_bp": 9,
+        "revision": 1
+      }
+    ],
+    "calendar": [
+      {
+        "date": "2026-11-25",
+        "state": "open"
+      }
+    ],
+    "quotes": [
+      {
+        "company": "importer-a",
+        "business_date": "2026-11-25",
+        "state": "confirmed"
+      }
+    ],
+    "notes": "合成汇率公告、日历和企业测算引用。"
+  }
+}
